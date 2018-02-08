@@ -1,0 +1,2 @@
+## eureka-consumer
+使用Spring Cloud提供的loadBalancerClient负载均衡器客户端接口来实现服务的消费。
