@@ -1,0 +1,15 @@
+server.port: 1201
+#在Eureka Server中注册的服务名称
+spring.application.name: config-server-file
+#配置服务器使用本地服务，默认为git
+spring.profiles.active: native
+#spring.cloud.config.server.native.searchLocations: file:///E:/properties/
+spring.cloud.config.server.native.searchLocations: classpath:/config/
+
+#spring:
+#  cloud:
+#    config:
+#      server:
+#        git:
+#          uri:https://git.coding.net/tiangao/demo-config-server.git
+#          clone-on-start:true
