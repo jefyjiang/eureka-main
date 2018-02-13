@@ -1,0 +1,6 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.3.81:9001/eureka/
+spring.application.name: eureka-client-query
+server.port: 2001
