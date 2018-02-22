@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.jlearn.sc.eureka.client.query</groupId>
-	<artifactId>eureka-client-query</artifactId>
-	<version>v1</version>
+	<groupId>com.cnipr.open.eureka.server</groupId>
+	<artifactId>eureka-server-edgware</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>eureka-client-query-v1</name>
-	<description>query service provider,use jersey and swagger2</description>
+	<name>eureka-server-Edgware</name>
+	<description>eureka server for edgware</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -34,24 +34,11 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jersey</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>io.swagger</groupId>
-			<artifactId>swagger-jersey2-jaxrs</artifactId>
-			<version>1.5.18</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>24.0-jre</version>
 		</dependency>
 	</dependencies>
 

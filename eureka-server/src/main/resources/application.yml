@@ -5,5 +5,5 @@ eureka.client.register-with-eureka: false
 eureka.client.fetch-registry: false
 
 eureka.server.enable-self-preservation: false
-#ÊµÀıÃû³ÆÏÔÊ¾ip
+#å®ä¾‹åç§°æ˜¾ç¤ºip
 eureka.instance.preferIpAddress: true
