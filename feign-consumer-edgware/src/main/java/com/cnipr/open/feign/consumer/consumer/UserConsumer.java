@@ -17,7 +17,7 @@ import java.util.List;
 
 import static com.sun.xml.internal.ws.api.message.Packet.Status.Request;
 
-@FeignClient("EUREKA-CLIENT-QUERY")
+@FeignClient(value = "EUREKA-CLIENT-QUERY",fallback = UserConsumerFallBack.class)
 public interface UserConsumer {
     @RequestMapping(value = "/user/list", method = RequestMethod.GET)
     ResponseEntity<List<User>> list(@RequestParam(value = "size") int size);

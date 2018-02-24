@@ -1,5 +1,6 @@
 spring.application.name: feign-consumer-query
 server.port: 8200
+feign.hystrix.enabled: true
 eureka:
   client:
     serviceUrl:

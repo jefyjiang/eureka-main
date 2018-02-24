@@ -23,10 +23,21 @@ public class UserEndpoint {
     @Produces({MediaType.APPLICATION_JSON})
     @GET
     public Response list(@QueryParam(value = "size")@DefaultValue(value = "1") int size){
+        System.out.println("@@@@@@@@@@ size="+size);
         User u1 = new User("name1",10,"password1");
         User u2 = new User("name2",20,null);
         List<User> users = Lists.newArrayList(u1);
-        if(size>=2)users.add(u2);
+        if(size>=2){
+            try {
+                long start = System.nanoTime();
+                System.out.println("start sleep at "+start);
+                Thread.sleep(5000L);
+                System.out.println("finish sleep at " + (System.nanoTime() - start));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            users.add(u2);
+        }
         return Response.ok(users).build();
     }
 

@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+
+import static org.bouncycastle.asn1.x500.style.RFC4519Style.name;
 
 /**
  * Created by Administrator on 2018/2/22.
@@ -27,9 +27,8 @@ public class UserRestService {
     @Path("/list")
     @Produces({MediaType.APPLICATION_JSON})
     @GET
-    public Response listUser(){
-        System.out.println("dddddddddddddddddddddddddddddddddddd");
-        ResponseEntity<List<User>> users = this.userConsumer.list(2);
+    public Response listUser(@QueryParam(value = "size") @DefaultValue(value = "3") int size){
+        ResponseEntity<List<User>> users = this.userConsumer.list(size);
         return Response.ok(users.getBody()).build();
     }
 }
