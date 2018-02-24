@@ -1,4 +1,4 @@
-package com.cnipr.open.eureka.client.query.rs;
+package com.cnipr.open.eureka.client.query.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
