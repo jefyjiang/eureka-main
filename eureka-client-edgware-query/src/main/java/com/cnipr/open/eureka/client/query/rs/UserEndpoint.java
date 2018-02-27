@@ -4,6 +4,8 @@ import com.cnipr.open.eureka.client.query.rs.dto.User;
 import com.google.common.collect.Lists;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,15 +23,17 @@ import java.util.List;
 @Component
 @Api(value = "用户相关服务", produces = "application/json")
 public class UserEndpoint {
-
+	@Value("${server.port}")
+	private String port ;
+	
     @Path("/list")
     @Produces({MediaType.APPLICATION_JSON})
     @GET
     @ApiOperation(value = "获取所有用户", notes = "需要分页")
     public Response list(@QueryParam(value = "size")@DefaultValue(value = "1") int size){
         System.out.println("@@@@@@@@@@ size="+size);
-        User u1 = new User("name1",10,"password1");
-        User u2 = new User("name2",20,null);
+        User u1 = new User("USER1_FROM_"+port,10,"password1");
+        User u2 = new User("USER2_FROM_"+port,20,null);
         List<User> users = Lists.newArrayList(u1);
         if(size>=2){
             try {
