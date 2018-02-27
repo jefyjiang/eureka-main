@@ -12,5 +12,11 @@
   	<module>eureka-consumer</module>
   	<module>eureka-consumer-feign</module>
   	<module>eureka-consumer-ribbon</module>
+  	<module>eureka-client-edgware-query</module>
+  	<module>eureka-server-edgware</module>
+  	<module>feign-consumer-edgware</module>
+  	<module>config-server-file</module>
+  	<module>config-server-git</module>
+  	<module>eureka-client-query-v1</module>
   </modules>
 </project>

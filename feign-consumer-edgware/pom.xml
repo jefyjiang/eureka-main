@@ -22,10 +22,48 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<swagger.version>1.5.12</swagger.version>
 		<spring-cloud.version>Edgware.SR2</spring-cloud.version>
 	</properties>
 
 	<dependencies>
+	
+	<!-- springboot 集成 jersey 、swagger 实现 JAX-RS Restful 開始 -->
+		<dependency>
+			<groupId>io.swagger</groupId>
+			<artifactId>swagger-jersey2-jaxrs</artifactId>
+			<version>${swagger.version}</version>
+		</dependency>
+		<!-- 支持自动确定版本路径： 写法由：link rel='stylesheet' href='/webjars/bootstrap/3.1.0/css/bootstrap.min.css' 
+            变为： link rel='stylesheet' href='/webjars/bootstrap/css/bootstrap.min.css' -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>webjars-locator</artifactId>
+            <version>0.32</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.commons</groupId>
+                    <artifactId>commons-lang3</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+		<!-- swagger 静态资源 -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>swagger-ui</artifactId>
+			<version>2.2.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.glassfish.hk2</groupId>
+			<artifactId>spring-bridge</artifactId>
+			<version>2.5.0-b34</version>
+		</dependency>
+	<!-- springboot 集成 jersey 、swagger 实现 JAX-RS Restful 结束 -->
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jersey</artifactId>

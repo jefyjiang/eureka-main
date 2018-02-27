@@ -5,6 +5,7 @@ import io.swagger.jaxrs.listing.ApiListingResource;
 import io.swagger.jaxrs.listing.SwaggerSerializers;
 import org.glassfish.jersey.jackson.JacksonFeature;
 import org.glassfish.jersey.server.ResourceConfig;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -13,11 +14,10 @@ import javax.ws.rs.ApplicationPath;
 /**
  * Created by Administrator on 2018/2/13.
  */
-//@ApplicationPath("/")
 @Component
 public class JerseyConfig extends ResourceConfig {
-//    @Value("${spring.jersey.application-path:/}")
-    private String apiPath="/";
+	@Value("${spring.jersey.application-path}")
+    private String apiPath;
 
     public JerseyConfig() {
         this.packages("com.cnipr.open.eureka.client.query.rs");
@@ -37,13 +37,13 @@ public class JerseyConfig extends ResourceConfig {
         this.register(SwaggerSerializers.class);
 
         BeanConfig config = new BeanConfig();
-        config.setConfigId("springboot-jersey-swagger-docker-example");
-        config.setTitle("Spring Boot + Jersey + Swagger + Docker Example");
+        config.setConfigId("springmvc-jersey-swagger-example");
+        config.setTitle("springmvc-jersey-swagger-example");
         config.setVersion("v1");
-        config.setContact("Hao Zhou");
+        config.setContact("cnipr");
         config.setSchemes(new String[]{"http", "https"});
         config.setBasePath(this.apiPath);
-        config.setResourcePackage("me.hzhou.resource");
+        config.setResourcePackage("com.cnipr.open.eureka.client.query.rs");
         config.setPrettyPrint(true);
         config.setScan(true);
 

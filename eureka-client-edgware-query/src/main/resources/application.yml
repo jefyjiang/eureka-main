@@ -4,3 +4,5 @@ eureka:
       defaultZone: http://localhost:8000/eureka/
 spring.application.name: eureka-client-query
 server.port: 8100
+server.servlet-path: /
+spring.jersey.application-path: /api

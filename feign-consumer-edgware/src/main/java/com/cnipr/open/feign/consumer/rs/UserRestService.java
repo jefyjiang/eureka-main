@@ -2,6 +2,10 @@ package com.cnipr.open.feign.consumer.rs;
 
 import com.cnipr.open.feign.consumer.consumer.UserConsumer;
 import com.cnipr.open.feign.consumer.consumer.vo.User;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -18,6 +22,7 @@ import static org.bouncycastle.asn1.x500.style.RFC4519Style.name;
  */
 @Path("/user")
 @Component
+@Api(value = "用户相关服务", produces = "application/json")
 public class UserRestService {
 
     @SuppressWarnings("SpringJavaAutowiringInspection")
@@ -27,6 +32,7 @@ public class UserRestService {
     @Path("/list")
     @Produces({MediaType.APPLICATION_JSON})
     @GET
+    @ApiOperation(value = "获取所有用户", notes = "需要分页")
     public Response listUser(@QueryParam(value = "size") @DefaultValue(value = "3") int size){
         ResponseEntity<List<User>> users = this.userConsumer.list(size);
         return Response.ok(users.getBody()).build();
