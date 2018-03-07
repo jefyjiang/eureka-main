@@ -6,3 +6,5 @@ spring.application.name: eureka-client-query
 server.port: 8100
 server.servlet-path: /
 spring.jersey.application-path: /api
+#服务向eureka注册时使用IP注册
+eureka.instance.prefer-ip-address: true
